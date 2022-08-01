@@ -36,7 +36,6 @@ const main = async () => {
     context: async ({ req, res }) => {
       const jid = req.headers.authorization?.split(" ")[1] || "";
       const ctx: ContextType = { req, res };
-
       try {
         const user = await getAuth().verifyIdToken(jid);
         if (user) {
